@@ -3,7 +3,7 @@ class User:
         self.income = income
 
 user = User(float(input("Your income:")))
-decision = input("What do you want to do?(Sell/Rent/Chance)")
+decision = str(input("What do you want to do?(Sell/Rent/Chance)"))
 
 if decision == "Rent":        
     purchasing_area = float(input("Price of the area in euro:"))
@@ -34,7 +34,7 @@ elif decision == "Sell":
     gains = selling_area-purchasing_area1-construction_price1
     print("Your gains are", gains)
 
-else:
+elif decision == "Chance":
     percentage_of_sellings = float(input("The percentage of the sellings(The part of your possessions you want to sell.):"))
     percentage_of_rents = float(input("The percentage of the rents(The part of things(for example: apartments)you want to rent.):"))
     construction_price = float(input("Price of the construction in euro:"))
@@ -56,5 +56,4 @@ elif earnings == 0:
 	
 else:
 	print("You must pay", 0 - earnings, "euro!")
-	print("Do NOT do this!")
-
+print("Do NOT do this!")
