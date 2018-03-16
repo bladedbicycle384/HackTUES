@@ -1,4 +1,3 @@
-# HackTUES
 class User:
     def __init__(self, income):
         self.income = income
