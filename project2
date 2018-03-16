@@ -10,4 +10,3 @@ income_for_month = (construction_area*rent)-construction_maintenance
 print(income_for_month)
 x = (purchasing_area + construction_price)/income_for_month
 print(int(x))
-
