@@ -57,3 +57,4 @@ elif earnings == 0:
 else:
 	print("You must pay", 0 - earnings, "euro!")
 	print("Do NOT do this!")
+
