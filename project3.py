@@ -1,22 +1,19 @@
 from tkinter import *
-
-root = Tk()
-
+	
 def Decision(decision):
-    if decision == "Rent":
-        w = Label(root, Rent(decision))
-        w.pack()
-    elif decision == "Sell":
-        w = Label(root, Sell(decision))
-        w.pack()
-    elif decision == "Chance":
-        w = Label(root, Chance(decision))
-        w.pack()
-
-
-def Rent(decision):
+	if decision == "Rent":
+		w = Label(root, Rent(decision))
+		w.pack()
+	elif decision == "Sell":
+		w = Label(root, Sell(decision))
+		w.pack()
+	elif decision == "Chance":
+		w = Label(root, Chance(decision))
+		w.pack()
+				
+def Rent():      
     purchasing_area = float(input("Price of the area in euro:"))
-    construction_price = float(input("Price of the construction in euro:"))
+    complextruction_price = float(input("Price of the construction in euro:"))
     area = float(input("Enter the area in m*m:"))
     floors = int(input("Enter the number of floors:"))
     construction_area = area*floors
@@ -41,17 +38,16 @@ def Rent(decision):
         t = Label(root,construction_area, text = "The summarized area is")
         t.pack()
 
-def Sell(decision):
+def Sell():
     purchasing_area1 = float(input("Price of the area in euro:"))
     construction_price1 = float(input("Price of the construction in euro:"))
-    income_after_payments1 = user.income-construction_price1-purchasing_area1
+    income_after_payments1 = user.income-construction_price-purchasing_area
     selling_area = float(input("Price of the selling area:"))
     gains = selling_area-purchasing_area1-construction_price1
-    y = Label(root, text = "Your gains are")
+    y = Label("Your gains are", gains)
     y.pack()
-    y = Label(root, text = gains)
-    y.pack()
-def Chance(decision):
+
+def Chance():
     percentage_of_sellings = float(input("The percentage of the sellings(The part of your possessions you want to sell.):"))
     percentage_of_rents = float(input("The percentage of the rents(The part of things(for example: apartments)you want to rent.):"))
     construction_price1 = float(input("Price of the construction in euro:"))
@@ -62,16 +58,12 @@ def Chance(decision):
     earnings = (percentage_of_rents/100)*residue_after_payments - (percentage_of_sellings/100)*gains
 	
     if earnings > 0:
-        u = Label(root,text = "You will receive")
-        u.pack()
-        u = Label(root, text = earnings)
+        u = Label(root, earnings, text = "You will receive")
         u.pack()
         o = Label(root, text = "Do it if you want!")
         o.pack()
         
     elif earnings == 0:
-        p = Label(root, text = earnings)
-        p.pack()
         p = Label(root, text = "You will not receive anything!")
         p.pack()
         a = Label(root, text = "There is no point of doing this!")
@@ -80,18 +72,13 @@ def Chance(decision):
     else:
         s = Label(root, text = "You must pay")
         s.pack()
-        s = Label(root, text = 0 - earnings)
-        s.pack()
-        s = Label(root, text = "euro!")
-        s.pack()
+        s = Label(root, 0 - earnings, text = "euro!")
         d = Label(root, text = "Do NOT do this!")
         d.pack()
-
+		
 class User:
     def __init__(self, income):
         self.income = income
 
 user = User(float(input("Your income:")))
-decision = input("What do you want to do?(Sell/Rent/Chance)")
-a = Label(root, Decision(decision))
-a.pack()
+decision = str(input("What do you want to do?(Sell/Rent/Chance)"))
