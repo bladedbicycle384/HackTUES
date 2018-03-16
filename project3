@@ -23,4 +23,9 @@ if decision == "Rent":
     print(int(x))
 
 elif decision == "Sell":
+    purchasing_area1 = float(input("Price of the area in euro:"))
+    construction_price1 = float(input("Price of the construction in euro:"))
+    income_after_payments1 = user.income-construction_price-purchasing_area
     selling_area = float(input("Price of the selling area:"))
+    gains = selling_area-purchasing_area1-construction_price1
+    print(gains)
