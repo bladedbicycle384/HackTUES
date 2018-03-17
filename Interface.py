@@ -1,31 +1,91 @@
 from tkinter import *
+
+
+root = Tk()
+root.title("Spaces Trading Calculator")
+a = Label(root, text = "Please choose an option", width = 65, bd = 130)
+a.pack()
+
+
 class Application(Frame):
+    root.configure(bg = "grey")
     def say_hi(self):
-        print("hi there, everyone!")
+        w = Label(root, text="Hello")
+        w.pack()
+        
+
+
 
     def createWidgets(self):
-        self.QUIT = Button(self)
-        self.QUIT["text"] = "QUIT"
-        self.QUIT["fg"]   = "red"
-        self.QUIT["command"] =  self.quit
 
-        self.QUIT.pack({"side": "left"})
+        self.Rent = Button(self)
 
-        self.hi_there = Button(self)
-        self.hi_there["text"] = "Hello",
-        self.hi_there["command"] = self.say_hi
+        self.Rent["text"] = "Rent"
 
-        self.hi_there.pack({"side": "left"})
+        self.Rent["fg"] = "red"
 
+        self.Rent["bg"] = "#332200"
+        
+        self.Rent["command"] =  self.Rent
+
+
+
+        self.Rent.pack({"side": "right"})
+
+
+
+        self.Sell = Button(self)
+
+        self.Sell["text"] = "Sell",
+
+        self.Sell["fg"] = "green"
+
+        self.Sell["bg"] = "#332200"
+
+        self.Sell["command"] = self.Sell
+
+
+
+        self.Sell.pack({"side": "left"})
+
+
+
+        self.Combined = Button(self)
+        
+        self.Combined["text"] = "Rent and Sell"
+        
+        self.Combined["fg"] = "purple"
+
+        self.Combined["bg"] = "#332200"
+
+        self.Combined["command"] = self.Combined
+        
+        
+        self.Combined.pack({})
+        
+        
+        self.Quit = Button(self)
+
+        self.Quit["text"] = "Exit this application"
+        
+        
+        
     def __init__(self, master=None):
+
         Frame.__init__(self, master)
+
         self.pack()
+   
         self.createWidgets()
+
         
         
-root = Tk()
-w = Label(root, text="Hello")
-w.pack()
+
+
+
 app = Application(master=root)
+
 app.mainloop()
+
 root.destroy()
+
